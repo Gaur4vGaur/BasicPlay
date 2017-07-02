@@ -1,0 +1,15 @@
+@(userForm: Form[models.UserData])(implicit request: RequestHeader, messagesProvider: MessagesProvider)
+
+@import helper._
+
+@main("Welcome to Play") {
+  <h1>Welcome to Play!</h1>
+  @form(action = routes.DynamoController.fetchdata) {
+    @inputText(field = userForm("name"), 'placeholder -> "Your name", '_label -> "Please ")
+    @inputText(field = userForm("age"), '_showConstraints -> false)
+
+    <p>
+      <button type="submit">continue</button>
+    </p>
+  }
+}
