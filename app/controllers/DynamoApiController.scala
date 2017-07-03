@@ -13,6 +13,8 @@ import play.api.mvc._
 class DynamoApiController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
 
+
+
   def echo(id: Int) = Action { implicit request: Request[AnyContent] =>
     Ok(Json.toJson(UserData("MyName", id*100)))
   }
